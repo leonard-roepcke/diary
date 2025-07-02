@@ -1,6 +1,8 @@
 import pygame
 import sys
 
+
+print("Hallo Welt")
 # Pygame initialisieren
 pygame.init()
 
