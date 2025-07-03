@@ -1,20 +1,32 @@
 import sys
 from PyQt5.QtWidgets import (
-    QApplication, QMainWindow, QWidget, QVBoxLayout, QTextEdit, QPushButton, QMessageBox
+    QApplication, QMainWindow, QWidget, QVBoxLayout, QTextEdit, QPushButton, QMessageBox, QLabel
 )
 from PyQt5.QtCore import Qt
 
 def main():
     app = QApplication([])
+
     fenster = QMainWindow()
-    fenster.setWindowTitle("Simple Diary App")
+    fenster.setWindowTitle("Your Diary")
     fenster.setGeometry(100, 100, 800, 600)
+
+    label = QLabel()
+    label.setStyleSheet("background-color: lightgray;")
+    label.setFixedSize(200, 100)
+    label.setText("This is a label")
+
+    layout = QVBoxLayout()
+
+    layout.addWidget(label)
+
+    central_widget = QWidget()
+    central_widget.setLayout(layout)
+
+    fenster.setCentralWidget(central_widget)
+
     fenster.show()
 
-    fenster_2 = QWidget()
-    fenster_2.setWindowTitle("Second Window")
-    fenster_2.setGeometry(200, 200, 400, 300)
-    fenster_2.show()
 
 
     app.exec_()
