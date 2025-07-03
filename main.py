@@ -82,6 +82,7 @@ def save_entry(entry_text, diary_folder, entry_name, vision_layout, textfeld):
         QMessageBox.critical(None, "Error", f"Failed to save entry: {e}")
 
     update_vision_layout(vision_layout, entry_name, textfeld, diary_folder)
+    textfeld.clear()
 
 def main():
     app = QApplication([])
