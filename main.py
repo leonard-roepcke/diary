@@ -108,19 +108,25 @@ def main():
     vision_layout = QVBoxLayout()
     update_vision_layout(vision_layout, entry_name, textfeld, diary_folder)
 
-    layout = QVBoxLayout()
-    layout.addLayout(vision_layout)
-    layout.addWidget(entry_name)
-    layout.addWidget(textfeld)
-    layout.addWidget(button)
+    # 👉 Editor-Teil: alles untereinander
+    editor_layout = QVBoxLayout()
+    editor_layout.addWidget(entry_name)
+    editor_layout.addWidget(textfeld)
+    editor_layout.addWidget(button)
+
+    # 👉 Haupt-Layout: links & rechts nebeneinander
+    main_layout = QHBoxLayout()
+    main_layout.addLayout(vision_layout, stretch=1)   # links
+    main_layout.addLayout(editor_layout, stretch=3)   # rechts
 
     central_widget = QWidget()
-    central_widget.setLayout(layout)
+    central_widget.setLayout(main_layout)
 
     fenster.setCentralWidget(central_widget)
     fenster.show()
 
     app.exec_()
+
 
 if __name__ == "__main__":
     main()
