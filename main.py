@@ -77,7 +77,7 @@ def save_entry(entry_text, diary_folder, entry_name, vision_layout, textfeld):
     try:
         with open(file_name, 'w') as file:
             file.write(entry_text)
-        QMessageBox.information(None, "Success", f"Entry saved as {file_name}")
+        #QMessageBox.information(None, "Success", f"Entry saved as {file_name}")
     except Exception as e:
         QMessageBox.critical(None, "Error", f"Failed to save entry: {e}")
 
